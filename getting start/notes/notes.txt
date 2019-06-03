@@ -49,3 +49,12 @@ Creating own Module.
 *Use the exports keyword to make properties and methods available outside the module file.
 
 var dt = require('./myfirstmodule');
+
+What is NPM?
+	node package manager
+
+What is a Package?
+	A package in Node.js contains all the files you need for a module.
+	Modules are JavaScript libraries you can include in your project.
+
+npm install upper-case
