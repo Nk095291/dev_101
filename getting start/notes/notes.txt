@@ -57,4 +57,4 @@ What is a Package?
 	A package in Node.js contains all the files you need for a module.
 	Modules are JavaScript libraries you can include in your project.
 
-npm install upper-case
+npm install upper-case and we can use it similarly as we use modules in js
