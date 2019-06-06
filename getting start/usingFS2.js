@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 var fs = require("fs");
 var folder = process.argv[2];
 if(fs.existsSync(folder)==false)

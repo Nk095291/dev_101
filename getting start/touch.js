@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 var fs = require("fs");
 var folder = process.argv[2];
 if(fs.existsSync(folder)==false)
@@ -8,6 +9,6 @@ if(fs.existsSync(folder)==false)
 }
 else{
     console.log("A C");
-    fs.unlink(folder);
+    fs.unlinkSync(folder);
     console.log("now it is deleted");
 }

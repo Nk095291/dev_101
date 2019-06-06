@@ -1,5 +1,6 @@
+#!/usr/bin/env node
 var fs = require("fs");
-tree("./","");
+tree(process.cwd(),"");
 
 function tree(x,st){
     if(fs.statSync(x).isDirectory()==true)
@@ -14,6 +15,6 @@ function tree(x,st){
     }
 };
 
-var ar=[1,3,5,68,8];
-for(var k in ar)
-    console.log(typeof(k));
+// var ar=[1,3,5,68,8];
+// for(var k in ar)
+//     console.log(typeof(k));
