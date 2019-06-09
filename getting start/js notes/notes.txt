@@ -16,12 +16,32 @@ introduce
  *"use strict". This enables Strict Mode, which catches common coding mistakes and "unsafe" actions.	
  *javaScript provides a function Object.freeze to prevent data mutation.after
  		freezing the obj you can no longer add,remove or delete prop.trying to change the value will be ignore without any error.
- *high order function := function that take other function as parameter
+ *high order function := function that take other function as parameter or return other functions
+
+ ------------------------------------------------------------------------operator----------------------------------------------------------------------------------
 
 *for variable no of arguments we can use "rest" operator i.e., "..."
 
 *spread operator("..."), which allows us to expand arrays and other expressions in 				places where multiple parameters or elements are expected.
 
+*destructuring assignment 
+	for object-------------------------------------------------------------------------------------
+		-const { x, y, z } = voxel; // x = 3.6, y = 7.4, z = 6.54
+		-const { x : a, y : b, z : c } = voxel // a = 3.6, b = 7.4, c = 6.54
+		-const { start : { x: startX, y: startY }} = a;
+		-const profileUpdate = ({ name, age, nationality, location }) => {
+									  /* do something with these fields */
+								}
+		------------------------------------------------------------------------------------------
+	for array ------------------------------------------------------------------------------------
+		-const [a, b] = [1, 2, 3, 4, 5, 6]
+		-const [a, b,,, c] = [1, 2, 3, 4, 5, 6];
+		-const [a, b, ...arr] = [1, 2, 3, 4, 5, 7]; // destructing operator with rest operator--
+										--you cannot use the rest operator to catch a subarray that leaves out 	last element of the original array.
+	----------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------constructor---------------------------------------------------------------------------
 * this is a constructor:= 
 function Bird() {
   this.name = "Albert";
@@ -29,6 +49,55 @@ function Bird() {
   this.numLegs = 2;
 }
 
-*The prototype is an object that is shared among ALL instances of Bird. Here's how to add numLegs to the Bird prototype:
+*The prototype is a property that is shared among ALL instances of Bird. Here's how to add numLegs to the Bird prototype:
 
-			Bird.prototype.numLegs = 2;
+			Bird.prototype.numLegs = 2;(out side of the function)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+* for(let x in ar)
+for an array x:==== 0,1,2,...ar.length
+for an object x:== firstprop, secondprop, thirdprop
+
+*String.prototype.replaceAt = function(index, character) {
+    return this.substr(0, index) + character + this.substr(index+1);
+};					// adding an prototype function for the String objects
+
+*Hoisting is JavaScript's default behavior of moving all declarations to the top of the current scope (to the top of the current script or the current function).
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+ES6 features
+
+const greeting = `Hello, my name is ${person.name}!  this is called literal ,with the help of this we can form complex string very easily *note "`" backticks is used 															here .${variable} syntax used above is a placeholder.
+const getMousePosition = (x, y) => ({ x, y }); consice object declaration
+
+const person = {
+  name: "Taylor",
+  sayHello() {					// consice function literal declaration
+    return `Hello! My name is ${this.name}.`;
+  }
+};
+
+=-=====================import a function/variable from another file ======================
+import { function } from "file_path_goes_here"
+// We can also import variables the same way!
+
+=========================named export==================================
+const capitalizeString = (string) => {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+export { capitalizeString } //How to export functions.
+export const foo = "bar"; //How to export variables.
+
+--------------import all the file of a program
+import * as object_with_name_of_your_choice from "file_path_goes_here"
+object_with_name_of_your_choice.imported_function
+
+==============================default export=============================
+export default function add(x,y) {
+  return x + y;
+}
+Note: Since export default is used to declare a fallback value for a module or file, you can only have one value be a default export in each module or file. Additionally, you cannot use export default with var, let, or const
+
+import for default export 
+		import add from "math_functions";			// here add is the name of the function we don't need {} as default export can export only one function from a file
+		add(5,4); //Will return 9
