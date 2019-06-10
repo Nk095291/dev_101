@@ -52,6 +52,11 @@ function Bird() {
 *The prototype is a property that is shared among ALL instances of Bird. Here's how to add numLegs to the Bird prototype:
 
 			Bird.prototype.numLegs = 2;(out side of the function)
+*instanceof operator  = it tells as whether the given object is an instance of the object constructor or not 
+						- ex :- obj instanceof obj_fun.
+*constructor property = obj.constructor return the constructor funtion, we have to redefine it every times we assign prototype property using object.
+*Bird.prototype = Object.create(Animal.prototype); now Bird constructor's instances will have all the properties of bird plus all properties of animal.
+
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 * for(let x in ar)
@@ -101,3 +106,42 @@ Note: Since export default is used to declare a fallback value for a module or f
 import for default export 
 		import add from "math_functions";			// here add is the name of the function we don't need {} as default export can export only one function from a file
 		add(5,4); //Will return 9
+
+---------------------------------------------regular expresision-------------------------------------------
+A regular expression is an object that describes a pattern of characters.
+
+Regular expressions are used to perform pattern-matching and "search-and-replace" functions on text.
+
+====syntax = myregex=/pattern_to_search/modifier.
+
+====methods = test() - return true and false depending upon whether regex is present in the string or not
+= match() - this method is for string , it takes the regex and return the match string is present
+
+->You can search for multiple patterns using the alternation or OR operator: "|".
+
+=====modifier(we can use more than one modifiers together)
+i = disable case sensitivity
+g = to continue searching even after first match
+
+=====wildcard 
+.(dot / period)==same as _ in dbms 
+	- ex =/hu./ this is regex can be use to search hut,hum,huh,huu
+=You can search for a literal pattern with some flexibility with character classes. Character classes allow you to define a group of characters you wish to match by placing them inside square ([ and ]) brackets.
+	ex - For example, you want to match "bag", "big", and "bug" but not "bog". You can create the regex /b[aiu]g/ to do this. The [aiu] is the character class that will only match the characters "a", "i", or "u".
+	-Inside a character set, you can define a range of characters to match using a hyphen character: -.
+	-To create a negated character set, you place a caret character (^) after the opening bracket and before the characters you do not want to match.
+	-"+" to search(a,aa,aaa) have same meaning as in toc.
+	-'*' to search(e,a,aa,aaa,aaaa) have same meaning as in toc.
+	-greedy match =/t[a-z]*i/ return ["titani"]. if applied on tatanic ... it return longest possible part of the string 
+	-lazy matching =/t[a-z]*?i/ returns ["ti"].... it return shortest possible part of the string
+	- the caret(^) is also used to search at the begenning of the string . ex = /^yo/ it will try to search yo in the begenning of the string
+	- similarly we can use dollar sign to search at the last - ex = /yo$/
+
+	=-------------------
+	shorthand character classes
+	\w = [a-zA-Z0-9_];
+	\W = [^a-zA-Z0-9_];
+	\d =[0-9];
+	\D = [^0-9];
+---------------------objects-----------------------------------
+Object.keys() = it returns the array of the obj's properties
