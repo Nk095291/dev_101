@@ -145,3 +145,7 @@ g = to continue searching even after first match
 	\D = [^0-9];
 ---------------------objects-----------------------------------
 Object.keys() = it returns the array of the obj's properties
+--------------------------methods-----------------------------
+***concat:-which is added to the end of the first array. It returns a new 					array and does not mutate either of the original arrays.
+****Functional programming is all about creating and using non-mutating 					functions.
+****The sort method sorts the elements of an array according to the callback 					function.
