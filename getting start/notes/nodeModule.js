@@ -8,7 +8,7 @@ http.createServer(      // creating server
         fs.readFile(filename,function(err,data){        // fs readfile function ,it read the content of the file
             if(err)         // on any error this part of the code will run 
             {
-                res.writeHead(200,{'Content-Type':'text?html'});
+                res.writeHead(200,{'Content-Type':'text/html'});
                 return res.end("file not found");
             }
             res.writeHead(200,{'Content-Type':'text/html'});        // tells the browers to consider the content as html file
